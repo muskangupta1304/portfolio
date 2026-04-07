@@ -252,36 +252,47 @@ function startEntranceAnimations() {
         // Animate section title
         const title = section.querySelector('.section-title');
         if (title) {
-            gsap.from(title, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 80%',
-                    toggleActions: 'play none none reverse'
-                },
-                x: -50,
-                opacity: 0,
-                duration: 0.8,
-                ease: 'power3.out'
-            });
+            gsap.fromTo(title, 
+                { x: -50, opacity: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
+                    },
+                    x: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: 'power3.out'
+                }
+            );
         }
 
         // Animate glass cards inside section
         const cards = section.querySelectorAll('.glass-card');
         if (cards.length > 0) {
-            gsap.from(cards, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 75%',
-                    toggleActions: 'play none none reverse'
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.2, // animate sequentially
-                ease: 'power3.out'
-            });
+            gsap.fromTo(cards, 
+                { y: 50, opacity: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse'
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.2,
+                    ease: 'power3.out'
+                }
+            );
         }
     });
+
+    // Refresh ScrollTriggers after setup
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 500);
 
     // 4. Smooth Scrolling for Navigation Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -11,30 +11,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === TYPING ANIMATION ===
     const typedEl = document.getElementById('typed-text');
-    const phrases = ['Tech Enthusiast', 'Python Developer', 'AI Explorer', 'Web Developer'];
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+    if (typedEl) {
+        const phrases = ['Tech Enthusiast', 'Python Developer', 'AI Explorer', 'Web Developer'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
 
-    function type() {
-        const current = phrases[phraseIndex];
-        if (isDeleting) {
-            typedEl.textContent = current.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typedEl.textContent = current.substring(0, charIndex + 1);
-            charIndex++;
+        function type() {
+            if (!typedEl) return;
+            const current = phrases[phraseIndex];
+            if (isDeleting) {
+                typedEl.textContent = current.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedEl.textContent = current.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            if (!isDeleting && charIndex === current.length) {
+                setTimeout(() => { isDeleting = true; }, 1500);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+            const speed = isDeleting ? 60 : 100;
+            setTimeout(type, speed);
         }
-        if (!isDeleting && charIndex === current.length) {
-            setTimeout(() => { isDeleting = true; }, 1500);
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-        const speed = isDeleting ? 60 : 100;
-        setTimeout(type, speed);
+        type();
     }
-    type();
 
     // === PARTICLE TRAIL ===
     const pCanvas = document.getElementById('particle-canvas');
@@ -184,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
 });
 
 function removePreloader() {

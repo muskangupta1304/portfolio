@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Muskan Gupta</title>
+    <meta name="description" content="Explore Muskan Gupta's projects across AI/ML, Computer Vision, Web Development, Data Science and more.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div id="content" class="scroll-container">
+
+        <!-- Navigation -->
+        <nav class="glass-nav">
+            <div class="logo">MG.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <!-- Theme Switcher -->
+            <div class="theme-switcher">
+                <button id="theme-toggle-btn" class="theme-toggle-btn" title="Change theme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <div id="theme-panel" class="theme-panel hidden">
+                    <button class="theme-swatch" data-cyan="#00F0FF" data-purple="#7000FF" style="background: linear-gradient(135deg,#00F0FF,#7000FF)" title="Cyber (default)"></button>
+                    <button class="theme-swatch" data-cyan="#00FF88" data-purple="#0066FF" style="background: linear-gradient(135deg,#00FF88,#0066FF)" title="Matrix"></button>
+                    <button class="theme-swatch" data-cyan="#FF6B35" data-purple="#FF0080" style="background: linear-gradient(135deg,#FF6B35,#FF0080)" title="Fire"></button>
+                    <button class="theme-swatch" data-cyan="#FFD700" data-purple="#FF6B00" style="background: linear-gradient(135deg,#FFD700,#FF6B00)" title="Sunset"></button>
+                    <button class="theme-swatch" data-cyan="#FF61AB" data-purple="#9B59B6" style="background: linear-gradient(135deg,#FF61AB,#9B59B6)" title="Rose"></button>
+                    <button class="theme-swatch" data-cyan="#E0E0E0" data-purple="#9E9E9E" style="background: linear-gradient(135deg,#E0E0E0,#9E9E9E)" title="Ice"></button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <section class="projects-page-hero">
+            <div class="page-hero-content">
+                <span class="page-tag">Portfolio</span>
+                <h1 class="page-hero-title">My <span class="gradient-text">Projects</span></h1>
+                <p class="page-hero-sub">Explore my work across different domains — from AI & Computer Vision to Web Development & Data Science.</p>
+                <div class="projects-count-row">
+                    <div class="count-chip"><span class="count-num" id="visible-count">7</span> projects shown</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Layout: Sidebar + Grid -->
+        <div class="projects-layout">
+
+            <!-- Domain Sidebar -->
+            <aside class="domain-sidebar" id="domain-sidebar">
+                <div class="sidebar-sticky">
+                    <h3 class="sidebar-title"><i class="fas fa-layer-group"></i> Domains</h3>
+                    <ul class="domain-list" id="domain-list">
+                        <li>
+                            <button class="domain-btn active" data-filter="all" id="filter-all">
+                                <span class="domain-icon">🗂️</span>
+                                <span class="domain-label">All Projects</span>
+                                <span class="domain-count">7</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="domain-btn" data-filter="ai-ml" id="filter-ai-ml">
+                                <span class="domain-icon">🧠</span>
+                                <span class="domain-label">AI / ML</span>
+                                <span class="domain-count">3</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="domain-btn" data-filter="computer-vision" id="filter-computer-vision">
+                                <span class="domain-icon">👁️</span>
+                                <span class="domain-label">Computer Vision</span>
+                                <span class="domain-count">2</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="domain-btn" data-filter="web-dev" id="filter-web-dev">
+                                <span class="domain-icon">🌐</span>
+                                <span class="domain-label">Web Development</span>
+                                <span class="domain-count">4</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="domain-btn" data-filter="data-science" id="filter-data-science">
+                                <span class="domain-icon">📊</span>
+                                <span class="domain-label">Data Science</span>
+                                <span class="domain-count">1</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="domain-btn" data-filter="client-work" id="filter-client-work">
+                                <span class="domain-icon">🎨</span>
+                                <span class="domain-label">Client Work</span>
+                                <span class="domain-count">1</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="sidebar-divider"></div>
+                    <p class="sidebar-hint"><i class="fas fa-lightbulb"></i> More domains coming as I build more projects!</p>
+                </div>
+            </aside>
+
+            <!-- Projects Grid -->
+            <main class="projects-main">
+                <div class="projects-grid-full" id="projects-grid">
+
+                    <!-- CrowdAnomNet -->
+                    <div class="glass-card pj-card" data-domains="ai-ml computer-vision">
+                        <div class="pj-domain-tags">
+                            <span class="dtag ai-ml">🧠 AI / ML</span>
+                            <span class="dtag computer-vision">👁️ Computer Vision</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>CrowdAnomNet Analytics System</h3>
+                            <p>An end-to-end AI pipeline for real-time person detection using YOLOv8 + ByteTrack, crowd density tracking, movement patterns, and behavioral insights — visualized through an interactive Streamlit dashboard with one-click report generation.</p>
+                            <div class="skill-tags">
+                                <span>Python</span><span>OpenCV</span><span>YOLOv8</span><span>ByteTrack</span><span>Deep Learning</span><span>Streamlit</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/KHUSHIGUPTA1304/CrowdAnomNet" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+
+                    <!-- Finger Counting -->
+                    <div class="glass-card pj-card" data-domains="ai-ml computer-vision">
+                        <div class="pj-domain-tags">
+                            <span class="dtag ai-ml">🧠 AI / ML</span>
+                            <span class="dtag computer-vision">👁️ Computer Vision</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Finger Counting</h3>
+                            <p>A real-time multi-hand finger counter supporting up to 4 hands simultaneously using OpenCV for video capture and MediaPipe Hands for landmark detection, with color-coded hand skeletons and a live summary bar on a mirrored webcam feed.</p>
+                            <div class="skill-tags">
+                                <span>Python</span><span>OpenCV</span><span>MediaPipe</span><span>Computer Vision</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/KHUSHIGUPTA1304" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+
+                    <!-- Market Gap Analysis Bot -->
+                    <div class="glass-card pj-card" data-domains="ai-ml data-science">
+                        <div class="pj-domain-tags">
+                            <span class="dtag ai-ml">🧠 AI / ML</span>
+                            <span class="dtag data-science">📊 Data Science</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Market Gap Analysis Bot</h3>
+                            <p>An AI-powered bot for automated market gap analysis using Python and Jupyter Notebooks. Processes datasets to identify business opportunities, unmet needs, and competitive gaps — enabling data-driven decision making.</p>
+                            <div class="skill-tags">
+                                <span>Python</span><span>Jupyter Notebook</span><span>NLP</span><span>Data Analysis</span><span>AI</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/KHUSHIGUPTA1304/Market-Gap-Analysis-Bot" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+
+                    <!-- Explore Bharat -->
+                    <div class="glass-card pj-card" data-domains="web-dev">
+                        <div class="pj-domain-tags">
+                            <span class="dtag web-dev">🌐 Web Development</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Explore Bharat</h3>
+                            <p>A responsive multi-page tourism website showcasing famous places across all Indian states. Features interactive navigation, state-wise destination pages, and a visually engaging UI — built entirely with HTML, CSS, and vanilla JavaScript.</p>
+                            <div class="skill-tags">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX Design</span><span>Responsive</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://khushigupta1304.github.io/Explore-bharat/" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        </div>
+                    </div>
+
+                    <!-- Personal Portfolio -->
+                    <div class="glass-card pj-card" data-domains="web-dev">
+                        <div class="pj-domain-tags">
+                            <span class="dtag web-dev">🌐 Web Development</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Personal Portfolio Website</h3>
+                            <p>Designed and deployed this portfolio website with Three.js 3D background, GSAP animations, glassmorphism UI, theme switcher, particle cursor trail, and custom typing animation — fully responsive with a contact form.</p>
+                            <div class="skill-tags">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Three.js</span><span>GSAP</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://khushigupta1304.github.io/portfolio" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        </div>
+                    </div>
+
+                    <!-- Elementum Landing Page -->
+                    <div class="glass-card pj-card" data-domains="web-dev">
+                        <div class="pj-domain-tags">
+                            <span class="dtag web-dev">🌐 Web Development</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Elementum Landing Page</h3>
+                            <p>A modern, animated landing page built with Vite and React. Features a sleek UI design with component-based architecture, smooth transitions, and a fully responsive layout — showcasing front-end development skills with contemporary tooling.</p>
+                            <div class="skill-tags">
+                                <span>React</span><span>Vite</span><span>JavaScript</span><span>UI Design</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/KHUSHIGUPTA1304/elementum-landing-page" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+
+                    <!-- Aditi Portfolio -->
+                    <div class="glass-card pj-card" data-domains="web-dev client-work">
+                        <div class="pj-domain-tags">
+                            <span class="dtag web-dev">🌐 Web Development</span>
+                            <span class="dtag client-work">🎨 Client Work</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Aditi Portfolio</h3>
+                            <p>A fully custom personal portfolio website designed and developed for a client. Built with HTML, CSS, and JavaScript featuring a clean responsive layout, smooth animations, and deployed via GitHub Pages.</p>
+                            <div class="skill-tags">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Client Work</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://khushigupta1304.github.io/aditi-portfolio" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Empty state -->
+                <div class="empty-state hidden" id="empty-state">
+                    <i class="fas fa-folder-open"></i>
+                    <p>No projects in this domain yet — but they're coming!</p>
+                </div>
+            </main>
+        </div>
+
+        <!-- Mobile domain filter (bottom bar on small screens) -->
+        <div class="mobile-filter-bar" id="mobile-filter-bar">
+            <button class="mob-filter-btn active" data-filter="all">All</button>
+            <button class="mob-filter-btn" data-filter="ai-ml">AI/ML</button>
+            <button class="mob-filter-btn" data-filter="computer-vision">Vision</button>
+            <button class="mob-filter-btn" data-filter="web-dev">Web</button>
+            <button class="mob-filter-btn" data-filter="data-science">Data</button>
+            <button class="mob-filter-btn" data-filter="client-work">Client</button>
+        </div>
+
+        <footer class="footer">
+            <p>© 2026 Muskan Gupta &nbsp;·&nbsp; <a href="index.html" style="color:var(--accent-cyan);text-decoration:none;">Back to Portfolio</a></p>
+        </footer>
+
+    </div>
+
+    <!-- Particle canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Scripts -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "gsap": "https://unpkg.com/gsap@3.12.5/index.js",
+                "gsap/ScrollTrigger": "https://unpkg.com/gsap@3.12.5/ScrollTrigger.js"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="projects-filter.js"></script>
+
+</body>
+</html>

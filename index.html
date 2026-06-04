@@ -40,7 +40,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <!-- Theme Switcher -->
@@ -66,7 +66,7 @@
                 <h1 class="name">Muskan Gupta</h1>
                 <!-- Typing animation target -->
                 <h2 class="title"><span id="typed-text"></span><span class="cursor-blink">|</span></h2>
-                <p class="summary">Detail-oriented computer science student pursuing NIELIT A-Level with a strong foundation in Python, C++, Web Development, and DBMS. Experienced in data analysis and passionate about applying analytical AI thinking to real-world problems.</p>
+                <p class="summary">Detail-oriented computer science student pursuing NIELIT A-Level with a strong foundation in Python, C++, web development, and database management. Experienced in data analysis using Pandas, Matplotlib, and Seaborn. Participated in national-level AI events including the AI Impact Festival (NIELIT &amp; MeitY) and completed Intel AI certifications. NCC C-Certificate holder demonstrating discipline and leadership.</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn primary-btn">View My Work</a>
                     <a href="#contact" class="btn secondary-btn">Contact Me</a>
@@ -100,14 +100,14 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
                 <div class="glass-card about-text">
-                    <p>I am a detail-oriented student passionate about technology, currently pursuing DOEACC A Level from NIELIT and holding a B.Com degree from Delhi University. I possess strong problem-solving abilities and a knack for learning new technologies alongside continuous skill development.</p>
-                    <p>I thrive in environments that challenge me and allow me to apply my knowledge of Computer Applications, Data Science, and AI. Currently, I am also pursuing a Data Science course conducted by Skill India.</p>
+                    <p>I am a detail-oriented computer science student passionate about technology, currently pursuing NIELIT A-Level (DOEACC) and holding a B.Com degree from Delhi University. I possess strong problem-solving abilities with hands-on experience in Python, C++, web development, and data science tools.</p>
+                    <p>I thrive in environments that challenge me and allow me to apply my knowledge in Data Science, AI, and Computer Vision. I have participated in national-level AI events including the AI Impact Festival (NIELIT &amp; MeitY) and hold NCC B &amp; C Certificates, demonstrating discipline and leadership.</p>
                     <div class="education-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-graduation-cap highlight-icon"></i>
                             <div>
                                 <h4>NIELIT A-Level</h4>
-                                <p>Pursuing (DOOAC)</p>
+                                <p>Pursuing (DOEACC)</p>
                             </div>
                         </div>
                         <div class="highlight-item">
@@ -121,13 +121,15 @@
                 </div>
                 <!-- Optional 3D representation or image placeholder for the right side -->
                 <div class="glass-card cert-card">
-                    <h3><i class="fas fa-award"></i> Certifications & Events</h3>
+                    <h3><i class="fas fa-award"></i> Certifications &amp; Events</h3>
                     <ul class="cert-list">
-                        <li><strong>Data Analyst & Python:</strong> Certified by One Roadmap.</li>
-                        <li><strong>Data Science (Skill India):</strong> Currently pursuing via Skill India Hub.</li>
-                        <li><strong>Intel AI For All:</strong> AI Appreciate & AI Aware Certified.</li>
-                        <li><strong>Volunteer @ AI Impact:</strong> Generative AI & Computer Vision.</li>
-                        <li><strong>NCC:</strong> B & C Certificates (2024).</li>
+                        <li><strong>Data Analyst &amp; Python:</strong> Certified by One Roadmap (2026).</li>
+                        <li><strong>Intel AI For All:</strong> AI Appreciate &amp; AI Aware Certified (Jan 2026).</li>
+                        <li><strong>Yuva AI for All:</strong> MeitY &amp; Nasscom FutureSkills Prime (Jan 2026).</li>
+                        <li><strong>Flask Framework:</strong> Udemy – Python And Flask Framework Complete Course.</li>
+                        <li><strong>AI Agents:</strong> Udemy Labs – AI Agents For Beginner (KodeKloud, May 2026).</li>
+                        <li><strong>Volunteer @ AI Impact Festival 2025:</strong> Generative AI &amp; Computer Vision, NIELIT &amp; MeitY.</li>
+                        <li><strong>NCC:</strong> B &amp; C Certificates (2024) + Independence Day, Ministry of Defence.</li>
                     </ul>
                 </div>
             </div>
@@ -137,7 +139,7 @@
         <section class="stats-section section-fade">
             <div class="stats-grid">
                 <div class="glass-card stat-card">
-                    <span class="stat-number" data-target="2">0</span>
+                    <span class="stat-number" data-target="7">0</span>
                     <span class="stat-suffix">+</span>
                     <p class="stat-label">Projects Built</p>
                 </div>
@@ -181,6 +183,7 @@
                         <span>SciPy</span>
                         <span>Matplotlib / Seaborn</span>
                         <span>OpenCV</span>
+                        <span>MediaPipe</span>
                     </div>
                 </div>
                 <div class="glass-card skill-category">
@@ -229,32 +232,59 @@
 
         <!-- Projects Section -->
         <section id="projects" class="projects-section section-fade">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">Featured Projects</h2>
+
             <div class="projects-grid">
+
+                <!-- CrowdAnomNet -->
                 <div class="glass-card project-card">
                     <div class="project-content">
-                        <h3>CrowdAnmNet Analytics System</h3>
-                        <p>An end-to-end AI pipeline utilizing OpenCV and deep learning models for real-time person detection, crowd analytics tracking, and automated interactive dashboard reporting.</p>
+                        <h3>CrowdAnomNet Analytics System</h3>
+                        <p>An end-to-end AI pipeline for real-time person detection using YOLOv8 + ByteTrack, crowd density tracking, movement patterns, and behavioral insights — visualized through an interactive Streamlit dashboard with one-click report generation.</p>
                         <div class="skill-tags">
-                            <span>Python</span>
-                            <span>OpenCV</span>
-                            <span>Streamlit</span>
-                            <span>Computer Vision</span>
+                            <span>Python</span><span>OpenCV</span><span>Deep Learning</span><span>Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/KHUSHIGUPTA1304/CrowdAnomNet" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- Explore Bharat -->
                 <div class="glass-card project-card">
                     <div class="project-content">
                         <h3>Explore Bharat</h3>
-                        <p>A comprehensive web platform dedicated to highlighting points of interest and unique destinations across the states of India, aimed at helping travelers explore and plan easily.</p>
+                        <p>A responsive multi-page tourism website showcasing famous places across all Indian states. Features interactive navigation, state-wise destination pages, and a visually engaging UI — built entirely with HTML, CSS, and vanilla JavaScript.</p>
                         <div class="skill-tags">
-                            <span>Web Development</span>
-                            <span>HTML/CSS/JS</span>
-                            <span>UI/UX Design</span>
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://khushigupta1304.github.io/Explore-bharat/" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Market Gap Analysis Bot -->
+                <div class="glass-card project-card">
+                    <div class="project-content">
+                        <h3>Market Gap Analysis Bot</h3>
+                        <p>An AI-powered bot for automated market gap analysis using Python and Jupyter Notebooks. Processes datasets to identify business opportunities, unmet needs, and competitive gaps — enabling data-driven decision making.</p>
+                        <div class="skill-tags">
+                            <span>Python</span><span>Jupyter Notebook</span><span>Data Analysis</span><span>AI / NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/KHUSHIGUPTA1304/Market-Gap-Analysis-Bot" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- View All Projects Button -->
+            <div class="view-all-container">
+                <a href="projects.html" class="btn primary-btn view-all-btn">
+                    View All Projects <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </section>
 
@@ -280,7 +310,7 @@
                         <div class="contact-info">
                             <div class="contact-item">
                                 <i class="fas fa-envelope"></i>
-                                <a href="mailto:muskgupta666@gmail.com">muskgupta666@gmail.com</a>
+                                <a href="mailto:muskankgupta666@gmail.com">muskankgupta666@gmail.com</a>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
@@ -303,10 +333,11 @@
 
                     <!-- Right side: Form -->
                     <div class="contact-right">
-                        <form action="https://formsubmit.co/muskgupta666@gmail.com" method="POST" class="contact-form">
+                        <form action="https://formsubmit.co/muskankgupta666@gmail.com" method="POST" class="contact-form">
                             <!-- Hidden Fields for FormSubmit Configurations -->
                             <input type="hidden" name="_subject" value="New message from Portfolio!">
                             <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://khushigupta1304.github.io/portfolio">
                             
                             <div class="form-group">
                                 <input type="text" id="name" name="name" required placeholder=" ">

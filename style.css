@@ -457,7 +457,7 @@ section {
 }
 
 .project-content h3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #fff;
 }
@@ -470,6 +470,70 @@ section {
 
 .glass-card:hover .project-content p {
     color: #fff;
+}
+
+
+/* Project Link Buttons */
+.project-links {
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    background: rgba(0, 240, 255, 0.06);
+    color: var(--accent-cyan);
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.project-link-btn i {
+    font-size: 0.8rem;
+}
+
+.project-link-btn:hover {
+    background: rgba(0, 240, 255, 0.18);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 14px var(--accent-cyan-glow);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* Clickable project card (entire card is a link) */
+.clickable-card {
+    cursor: pointer;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.clickable-card:hover {
+    border-color: rgba(0, 240, 255, 0.5);
+    box-shadow: 0 8px 40px rgba(0, 240, 255, 0.18);
+    transform: translateY(-4px);
+}
+
+.project-title-icon {
+    font-size: 0.9rem;
+    color: var(--accent-cyan);
+    opacity: 0.7;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.clickable-card:hover .project-title-icon {
+    opacity: 1;
+    transform: translateX(3px) translateY(-2px);
 }
 
 /* Contact Section */
@@ -1092,4 +1156,38 @@ body, a, button {
 @keyframes pulse {
     0%, 100% { opacity: 0.5; }
     50% { opacity: 1; text-shadow: 0 0 10px var(--text-primary); }
+}
+
+/* View All Projects Teaser Styles */
+.view-all-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+    width: 100%;
+}
+
+.view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 2.2rem;
+    font-size: 0.95rem;
+    border-radius: 50px;
+    background: linear-gradient(90deg, var(--accent-purple), #4900a6);
+    color: #fff;
+    box-shadow: 0 4px 15px var(--accent-purple-glow);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.view-all-btn i {
+    transition: transform 0.3s ease;
+}
+
+.view-all-btn:hover {
+    box-shadow: 0 6px 20px var(--accent-purple-glow), 0 0 15px rgba(112, 0, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.view-all-btn:hover i {
+    transform: translateX(5px);
 }

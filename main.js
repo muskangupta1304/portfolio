@@ -1,6 +1,6 @@
 import { initThreeBackground } from './three-background.js';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);

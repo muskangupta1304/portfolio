@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // === TYPING ANIMATION ===
     const typedEl = document.getElementById('typed-text');
     if (typedEl) {
-        const phrases = ['Tech Enthusiast', 'Python Developer', 'AI Explorer', 'Web Developer'];
+        const phrases = ['Python Developer', 'Frontend Developer', 'Full-Stack Developer', 'Data Analyst', 'AI / ML Enthusiast'];
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;

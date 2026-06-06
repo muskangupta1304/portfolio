@@ -10,12 +10,12 @@ A premium, interactive 3‑D portfolio website built with **HTML**, **CSS**, and
 - Animated counters, quote section, and more
 
 ## Live Demo
-https://khushigupta1304.github.io/portfolio
+https://muskangupta1304.github.io/portfolio
 
 ## Running locally
 ```powershell
 # Clone the repo
-git clone https://github.com/KHUSHIGUPTA1304/portfolio.git
+git clone https://github.com/muskangupta1304/portfolio.git
 cd portfolio
 # Serve with any static server (Python example)
 python -m http.server 8000
